@@ -49,11 +49,12 @@ def main():
 
             print(f"  S{season_num:02d}E{ep_num:03d} ({ep_id})")
             subprocess.run([
-                "yt-dlp",
-                "--merge-output-format", "mp4",
-                "-o", out_template,
-                url
-            ])
+            "yt-dlp",
+            "-f", "bestvideo+bestaudio[language=et]/bestvideo+bestaudio",
+            "--merge-output-format", "mp4",
+            "-o", out_template,
+            url
+        ])
             time.sleep(1)
 
 if __name__ == "__main__":
